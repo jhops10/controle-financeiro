@@ -19,4 +19,10 @@ public class GlobalExceptionHandler {
         ErrorResponse errorResponse = new ErrorResponse("Erro! Este email já está em uso.", ex.getMessage());
         return ResponseEntity.status(HttpStatus.CONFLICT).body(errorResponse);
     }
+
+    @ExceptionHandler(IncorrectPasswordException.class)
+    public ResponseEntity<Object> handleIncorrectPasswordException(IncorrectPasswordException ex) {
+        ErrorResponse errorResponse = new ErrorResponse("Erro! Senha Incorreta", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(errorResponse);
+    }
 }
