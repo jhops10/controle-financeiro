@@ -71,7 +71,7 @@ Authorization: Bearer SEU_TOKEN_AQUI
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/jhops10/personal-finance.git
+   git clone https://github.com/jhops10/controle-financeiro.git
    cd personal-finance
 
 2. Configure o banco de dados MySQL:
