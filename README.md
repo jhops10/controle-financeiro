@@ -1,6 +1,6 @@
 # 💰 Sistema de Gerenciamento Financeiro
 
-API REST desenvolvida em Java com Spring Boot para controle financeiro pessoal. Permite o cadastro de usuários, autenticação via JWT e o gerenciamento de receitas, despesas e resumos financeiros mensais.
+API REST desenvolvida para controle financeiro pessoal. Permite o cadastro de usuários, autenticação via JWT e o gerenciamento de receitas, despesas e resumos financeiros mensais.
 
 ---
 
