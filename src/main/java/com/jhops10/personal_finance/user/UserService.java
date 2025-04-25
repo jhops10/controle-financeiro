@@ -2,6 +2,7 @@ package com.jhops10.personal_finance.user;
 
 import com.jhops10.personal_finance.exceptions.EmailAlreadyInUseException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
     public User createUser(UserDTO dto) {
         if (userRepository.findByEmail(dto.email()).isPresent()) {
@@ -18,7 +20,7 @@ public class UserService {
         User user = User.builder()
                 .name(dto.name())
                 .email(dto.email())
-                .password(dto.password())
+                .password(passwordEncoder.encode(dto.password()))
                 .build();
 
         return userRepository.save(user);
